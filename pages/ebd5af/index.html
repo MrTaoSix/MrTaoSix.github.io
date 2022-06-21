@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>MongoDB_学习笔记</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    
+    <meta name="description" content="这都能别你看到！">
+    
+    <link rel="preload" href="/assets/css/0.styles.207586fd.css" as="style"><link rel="preload" href="/assets/js/app.98d20b3f.js" as="script"><link rel="preload" href="/assets/js/2.869fa79d.js" as="script"><link rel="preload" href="/assets/js/13.82b8da78.js" as="script"><link rel="prefetch" href="/assets/js/10.28e4170c.js"><link rel="prefetch" href="/assets/js/11.817e0619.js"><link rel="prefetch" href="/assets/js/12.a82aae2a.js"><link rel="prefetch" href="/assets/js/14.f8f102e1.js"><link rel="prefetch" href="/assets/js/15.e8bf6d93.js"><link rel="prefetch" href="/assets/js/16.9bb3afab.js"><link rel="prefetch" href="/assets/js/17.59f3103a.js"><link rel="prefetch" href="/assets/js/18.06441a97.js"><link rel="prefetch" href="/assets/js/19.31ae385d.js"><link rel="prefetch" href="/assets/js/20.9011a7e6.js"><link rel="prefetch" href="/assets/js/21.bd89a370.js"><link rel="prefetch" href="/assets/js/22.87ac478c.js"><link rel="prefetch" href="/assets/js/23.3c64c06b.js"><link rel="prefetch" href="/assets/js/24.19c41544.js"><link rel="prefetch" href="/assets/js/25.4322d2aa.js"><link rel="prefetch" href="/assets/js/26.cfccd3d6.js"><link rel="prefetch" href="/assets/js/27.dbda8246.js"><link rel="prefetch" href="/assets/js/28.79ed3dfa.js"><link rel="prefetch" href="/assets/js/29.bb263129.js"><link rel="prefetch" href="/assets/js/3.5283630f.js"><link rel="prefetch" href="/assets/js/30.fbb6834a.js"><link rel="prefetch" href="/assets/js/31.40b35657.js"><link rel="prefetch" href="/assets/js/32.ca16d268.js"><link rel="prefetch" href="/assets/js/33.f7946037.js"><link rel="prefetch" href="/assets/js/34.fdf25b59.js"><link rel="prefetch" href="/assets/js/35.e59df783.js"><link rel="prefetch" href="/assets/js/36.f719d947.js"><link rel="prefetch" href="/assets/js/37.f7ffce81.js"><link rel="prefetch" href="/assets/js/38.1bcbbfbc.js"><link rel="prefetch" href="/assets/js/39.6058876d.js"><link rel="prefetch" href="/assets/js/4.178067f8.js"><link rel="prefetch" href="/assets/js/5.e770adf9.js"><link rel="prefetch" href="/assets/js/6.b48b33bd.js"><link rel="prefetch" href="/assets/js/7.7022f113.js"><link rel="prefetch" href="/assets/js/8.11a349d9.js"><link rel="prefetch" href="/assets/js/9.8c22faf0.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.207586fd.css">
+  </head>
+  <body class="theme-mode-light">
+    <div id="app" data-server-rendered="true"><div class="theme-container sidebar-open have-rightmenu"><header class="navbar blur"><div title="目录" class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/images/logo.png" alt="" class="logo"> <!----></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="碎碎念" class="dropdown-title"><a href="/coding/" class="link-title">碎碎念</a> <span class="title" style="display:none;">碎碎念</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/baodian/zero/" class="nav-link">PAT</a></li><li class="dropdown-item"><!----> <a href="/baodian/zero/" class="nav-link">剑指offer</a></li><li class="dropdown-item"><!----> <a href="/baodian/high/" class="nav-link">LeeCode</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="爱编程" class="dropdown-title"><a href="/coding/" class="link-title">爱编程</a> <span class="title" style="display:none;">爱编程</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/coding/pat/" class="nav-link">PAT</a></li><li class="dropdown-item"><!----> <a href="/coding/offer/" class="nav-link">剑指offer</a></li><li class="dropdown-item"><!----> <a href="/coding/leeCode/" class="nav-link">LeeCode</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="专栏" class="dropdown-title"><a href="/column/" class="link-title">专栏</a> <span class="title" style="display:none;">专栏</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/column/synology/" class="nav-link">群晖NAS Docker系列教程</a></li><li class="dropdown-item"><!----> <a href="/column/vuepress/" class="nav-link">vuepress系列教程</a></li><li class="dropdown-item"><!----> <a href="/column/springboot/" class="nav-link">springboot系列教程</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端" class="dropdown-title"><!----> <span class="title" style="display:;">后端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>Mysql</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="http://mysql.hepcloud.top" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  DS918-Mysql
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="http://mysql.huerpu.top" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  DS220-MySql
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>Redis</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="http://redis.hepcloud.top" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  DS918-Redis
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="http://redis.huerpu.top" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  DS220-Redis
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>ElasticSearch</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="http://es.hepcloud.top" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  DS918-es
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="http://es.hepcloud.top" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  DS220-es
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li></ul></div></div><div class="nav-item"><a href="http://www.jinglisen.top" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  关于我
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar-hover-trigger"></div> <aside class="sidebar" style="display:none;"><!----> <nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="碎碎念" class="dropdown-title"><a href="/coding/" class="link-title">碎碎念</a> <span class="title" style="display:none;">碎碎念</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/baodian/zero/" class="nav-link">PAT</a></li><li class="dropdown-item"><!----> <a href="/baodian/zero/" class="nav-link">剑指offer</a></li><li class="dropdown-item"><!----> <a href="/baodian/high/" class="nav-link">LeeCode</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="爱编程" class="dropdown-title"><a href="/coding/" class="link-title">爱编程</a> <span class="title" style="display:none;">爱编程</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/coding/pat/" class="nav-link">PAT</a></li><li class="dropdown-item"><!----> <a href="/coding/offer/" class="nav-link">剑指offer</a></li><li class="dropdown-item"><!----> <a href="/coding/leeCode/" class="nav-link">LeeCode</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="专栏" class="dropdown-title"><a href="/column/" class="link-title">专栏</a> <span class="title" style="display:none;">专栏</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/column/synology/" class="nav-link">群晖NAS Docker系列教程</a></li><li class="dropdown-item"><!----> <a href="/column/vuepress/" class="nav-link">vuepress系列教程</a></li><li class="dropdown-item"><!----> <a href="/column/springboot/" class="nav-link">springboot系列教程</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端" class="dropdown-title"><!----> <span class="title" style="display:;">后端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>Mysql</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="http://mysql.hepcloud.top" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  DS918-Mysql
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="http://mysql.huerpu.top" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  DS220-MySql
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>Redis</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="http://redis.hepcloud.top" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  DS918-Redis
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="http://redis.huerpu.top" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  DS220-Redis
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>ElasticSearch</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="http://es.hepcloud.top" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  DS918-es
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="http://es.hepcloud.top" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  DS220-es
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li></ul></div></div><div class="nav-item"><a href="http://www.jinglisen.top" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  关于我
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><a href="/linux/K8s部署文档" class="sidebar-heading clickable"><span>Linux</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/database/MyBatis-Plus-笔记" class="sidebar-heading clickable open"><span>数据库</span> <span class="arrow down"></span></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/701ae0/" class="sidebar-link">MyBatis-Plus-笔记</a></li><li><a href="/pages/ebd5af/" aria-current="page" class="active sidebar-link">MongoDB_学习笔记</a></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><a href="/database/ES/elasticsearch笔记" class="sidebar-heading clickable"><span>ES</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable is-sub-group depth-1"><a href="/database/mysql/MyBatis-Plus-笔记" class="sidebar-heading clickable"><span>Mysql</span> <span class="arrow right"></span></a> <!----></section></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/设计模式/学习笔记" class="sidebar-heading clickable"><span>设计模式</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/调试工具/arthas/Arthas（阿尔萨斯）Java诊断工具_浅入了解" class="sidebar-heading clickable"><span>调试</span> <span class="arrow right"></span></a> <!----></section></li></ul> </aside> <div><main class="page"><div class="theme-vdoing-wrapper "><div class="articleInfo-wrap" data-v-06225672><div class="articleInfo" data-v-06225672><ul class="breadcrumbs" data-v-06225672><li data-v-06225672><a href="/" title="首页" class="iconfont icon-home router-link-active" data-v-06225672></a></li> <li data-v-06225672><a href="/categories/?category=database" title="分类" data-v-06225672>database</a></li><li data-v-06225672><a href="/categories/?category=MongoDB" title="分类" data-v-06225672>MongoDB</a></li></ul> <div class="info" data-v-06225672><!----> <div title="创建时间" class="date iconfont icon-riqi" data-v-06225672><a href="javascript:;" data-v-06225672>2022-05-31</a></div> <!----></div></div></div> <!----> <div class="content-wrapper"><div class="right-menu-wrapper"><div class="right-menu-margin"><div class="right-menu-title">目录</div> <div class="right-menu-content"></div></div></div> <h1><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAABH1JREFUSA3tVl1oHFUUPmdmd2ltklqbpJDiNnXFmgbFktho7YMPNiJSSZM0+CAYSkUELVhM6YuwIPpgoOKDqOBDC0XE2CQoNtQXBUFTTcCi+Wlh1V2TQExsUzcltd3M9Tt3ZjZzZ2fT+OJTL8yeM+eee757fmeJbq//KQL8X3DUSFOcfr7cRsRtxNQMWueeVzOkaITIGqQHNg5y8+jNW9ldM7A6nTpAjuolUikAwq7CE3WcM2RRDz+XGVgN3FptU/aUSlvq9Pa3iZ1+sgAqJyyAFqkipd9dqiwHF3P65YycLWc/6sqGrvoEoIp6DOFaX5h6+dnfjkWprwqsPk0dUGq5vySwDImC10KxFHgGL1SWoc92O3eVht09qdXNH11I2SsTsJYqMWzihqGMi+A+Garf3BAuuLI5oGlULyNfyB/HYNujwktOfRrMr5t77NmevqaUopx0grnKAyvVpmwUDB4x6FPXuGvYLTDwWsejwgtgkYKPqRJg8SV6xaiZ3ZTppGneS4yfH5/66fZSDHv+QZci/+h5c5UHtpy67JUqGppM0sh0Nc1dW6/N1W5Yoqat8/TU/VnadmdeW2PLLSyh0cvxBs3KbqTmwYPpxN4do/mzE8nEpvX/UMu2Wbp74zUAK5q6WkHns7V0eWkdPbPzd3rxkTGybadYySumVzhcaJFbs5UrEkQ/+CK8gF5dnh/6ciIZ73gwQ927L1IitoxKLXYP3SjYdOrHHfTZhRRlFyrorafPk20B3HPD1y2G3qKZME5Jcf3t/HUC13/8tSd++vqFveMUTwAUxSUFI1QekR1+bIze3D9MF2aq6cPvG72CgnldWCFqyRw3lwH8ZMerjTD9ElRO7Gv44wNpC90aASqGfVlz/Rx17srQ57/UU26hkhQqUB7dBR71WmzQhHUnblGmVOEw0jhbV1n9OlXUDCIRGaNV5Jp43N516fN7JmnTHdfp7Hgy0luO4aMhtkLL8Bi3bUWYvzh5Mn1dTxrL6QmGuRhGL/TiTTxRoEdTszSaq9GR0NGA3KdkOz3hqSV3MIDhQ5IVX/Ivx3umBti2es2h4eZby7x8br1rkf7Mo90AqC8aQ3sJeNzqFRu+vSANAQe3PL7l0HGOAdwDCeZYvNKeoZp1Qfs6Aipndh86HmFRi0LAnEO47wsqM6cdfjh3jBPUzhZy7nvlUfFsamED1VQt6aISHVymXZ/B2aCtIG8AI8xfobj2d3en1wWVhOeHELKmLQ1s211s88comkv4UCwWyF787mJdYXtNfhKAXVqnKTq8QZvGAGGOfaTo5pGZ/PwbUCr5+DPr/1J92JNHr9aOl/F3iI5+O1nfybsGxoimvZ3ViWSluDITw3P37mypheDIPY0tw7+O/5ApbkYw+zpfaUVu32Pi98+defdUhEpZkRFq0aqyNh9FuL9hpYbEm6iwi0z2REd09ZmyENEbuhjDWzKvZXTqKYaBIr3tt5kuPtQBZFvEUwHt60vfCNu41XsksH9Ij1BMMz1Y0OOunHNShFIP5868g5zeXmuLwL9T4b6Q2+KejgAAAABJRU5ErkJggg==">MongoDB_学习笔记<!----></h1> <!----> <div class="theme-vdoing-content content__default"><p>#mongodb 学习笔记
+##1. mongodb基本命令</p> <ul><li>启动服务端  bin: ./mongod</li> <li>启动客户端  bin: ./mongo</li> <li>停止MongoDB的时候一定要正确的退出  1: &gt; use admin   2: &gt; db.shutdownServer();
+##2. 概念解析
+不管我们学习什么数据库都应该学习其中的基础概念，在mongodb中基本的概念是文档、集合、数据库，下面我们挨个介绍。</li></ul> <p>下表将帮助您更容易理解Mongo中的一些概念：</p> <table><thead><tr><th>SQL术语/概念</th> <th>MongoDB术语/概念</th> <th>解释/说明</th></tr></thead> <tbody><tr><td>database</td> <td>database</td> <td>数据库表</td></tr> <tr><td>table</td> <td>collection</td> <td>数据库表/集合</td></tr> <tr><td>row</td> <td>document</td> <td>数据记录行/文档</td></tr> <tr><td>column</td> <td>field</td> <td>数据字段/域</td></tr> <tr><td>index</td> <td>index</td> <td>索引</td></tr> <tr><td>table joins</td> <td></td> <td>表连接,MongoDB不支持</td></tr> <tr><td>primary key</td> <td>primary key</td> <td>主键,MongoDB自动将_id字段设置为主键</td></tr></tbody></table> <p>##3. 在Docker中运行MongoDB
+<em>可以搜索然后下载自己需要的版本   docker search mongo</em></p> <ol><li><strong>搜索mongodb</strong></li></ol> <div class="language- extra-class"><pre class="language-text"><code>docker search mongo
+</code></pre></div><ol start="2"><li><strong>拉取镜像</strong></li></ol> <div class="language- extra-class"><pre class="language-text"><code>docker pull mongo
+</code></pre></div><ol start="3"><li><strong>运行</strong></li></ol> <div class="language- extra-class"><pre class="language-text"><code>docker run -p 27017:27017 --name &quot;mymongo&quot; -v /docker/data/db:/data/db -d mongo:latest
+</code></pre></div><ul><li>--name: 设置别名 方便后面操作</li> <li>-v    : 挂在目录，/data/db 是mongo默认存放数据的目录 挂在到系统的/docker/data/db，mac端需要设置docker为共享目录</li> <li>-d    :后台运行</li> <li>mongo:latest   镜像：tag</li></ul> <ol start="5"><li>进入容器</li></ol> <div class="language- extra-class"><pre class="language-text"><code>docker exec -it mymongo mongo
+</code></pre></div><p><em>使用-d时容器会进入后台，要想进入容器需要通过 attach exec指令 推荐exec退出不停止容器</em></p> <ul><li>exec  进入容器</li> <li>-i    交互式操作</li> <li>-t    终端</li> <li>/bin/bash  OR  mongo</li></ul> <p>退出容器</p> <div class="language- extra-class"><pre class="language-text"><code>exit
+</code></pre></div><ol start="6"><li>拉取mongo管理页面</li></ol> <div class="language- extra-class"><pre class="language-text"><code>docker pull mongo-express
+docker run --link mymongo:mongo -p 8081:8081 mongo-express
+</code></pre></div><ul><li>--link 添加链接到另一个容器；
+<a href="localhost:8081">管理页面 localhost:8081</a></li></ul> <p>###2.1 数据库
+一个mongodb可以建立多个数据库。</p> <p>默认的数据库为&quot;db&quot;,存储在data目录中µ</p> <p>MongoDB的单个实例可以容纳多个独立的数据库，每一个都有自己的集合和权限，不同的数据库也放置在不同的文件中。</p> <ul><li><strong>show dbs</strong>  显示所有数据的列表</li></ul> <div class="language- extra-class"><pre class="language-text"><code>&gt; show dbs
+local  0.078GB
+test   0.078GB
+</code></pre></div><ul><li><strong>db</strong> 显示当前数据库对象或集合</li></ul> <div class="language- extra-class"><pre class="language-text"><code>&gt; db
+test
+</code></pre></div><ul><li><strong>use</strong> 连接到一个指定的数据库</li></ul> <div class="language- extra-class"><pre class="language-text"><code>&gt; use lcoal
+switched to db local
+&gt; db
+local
+</code></pre></div><p>###2.2 文档（Document）
+文档是一组键值(key-value)对(即 BSON)。MongoDB 的文档不需要设置相同的字段，并且相同的字段不需要相同的数据类型，这与关系型数据库有很大的区别，也是 MongoDB 非常突出的特点。
+一个简单的文档例子如下：</p> <div class="language- extra-class"><pre class="language-text"><code>{&quot;site&quot;:&quot;www.mrtaosix.com&quot;, &quot;name&quot;:&quot;mrtao&quot;}
+</code></pre></div><p><strong>需要注意的是：</strong></p> <ol><li>文档中的键/值对是有序的。</li> <li>文档中的值不仅可以是在双引号里面的字符串，还可以是其他几种数据类型（甚至可以是整个嵌入的文档)。</li> <li>MongoDB区分类型和大小写。</li> <li>MongoDB的文档不能有重复的键。</li> <li>文档的键是字符串。除了少数例外情况，键可以使用任意UTF-8字符。</li></ol> <p><strong>文档键命名规范：</strong></p> <ul><li>键不能含有\0 (空字符)。这个字符用来表示键的结尾。</li> <li>.和$有特别的意义，只有在特定环境下才能使用。</li> <li>以下划线&quot;_&quot;开头的键是保留的(不是严格要求的)。</li></ul> <p>##集合
+###1. <strong>创建集合</strong></p> <div class="language- extra-class"><pre class="language-text"><code>db.createCollection(name,option)
+</code></pre></div><p>参数说明：</p> <ul><li>name:    要创建的集合名称</li> <li>options: 可选参数，指定有关内存大小及索引的选项</li></ul> <table><thead><tr><th>字段</th> <th>类型</th> <th>描述</th></tr></thead> <tbody><tr><td>capped</td> <td>布尔</td> <td>（可选）如果为true，则创建固定集合。当达到最大值时，它会自动覆盖最早的文档。<strong>当该值为 true 时，必须指定 size 参数。</strong></td></tr> <tr><td>autoIndexId</td> <td>布尔</td> <td>（可选）如为 true，自动在 _id 字段创建索引。默认为 false。</td></tr> <tr><td>size</td> <td>数值</td> <td>（可选）为固定集合指定一个最大值，以千字节计（KB）。<strong>如果 capped 为 true，也需要指定该字段。</strong></td></tr> <tr><td>max</td> <td>数值</td> <td>（可选）指定固定集合中包含文档的最大数量。</td></tr></tbody></table> <p><em>在MongoDB中你不需要创建集合，当你插入文档时，会自动创建集合</em></p> <p>###2. <strong>删除集合</strong></p> <div class="language- extra-class"><pre class="language-text"><code>db.collection.drop()
+</code></pre></div><p>返回值：成功返回true</p> <p>###2. <strong>插入文档</strong> <em>MongoDB 使用 insert() 或 save() 方法向集合中插入文档</em>
+2.1 插入一个文档</p> <div class="language- extra-class"><pre class="language-text"><code>db.collection.insertOne(
+    &lt;document&gt;,
+    {
+        writeConcern:&lt;document&gt;
+    }
+)
+</code></pre></div><p><strong>参数说明</strong></p> <ul><li>collection : 集合的名称</li> <li>document   :要写入文档本身</li> <li>writeConcern: 安全写级别,有默认值
+示例：</li></ul> <div class="language- extra-class"><pre class="language-text"><code>db.text1.insertOne(
+  {
+    _id:&quot;001&quot;,
+    name:&quot;jack&quot;,
+    age:23
+  }
+)
+</code></pre></div><p>Tips:</p> <ul><li>_id：可不写 可自动生成</li> <li>写级别可使用默认的
+2.2 插入多个文档</li></ul> <div class="language- extra-class"><pre class="language-text"><code>插入单个
+&gt;db.col.insert({title: 'MongoDB ',
+    description: 'MongoDB 是一个 Nosql 数据库',
+    url: 'http://www.runoob.com',
+    tags: ['mongodb', 'database', 'NoSQL'],
+    likes: 100
+})
+
+插入多个
+&gt;db.col.insert([{title: 'MongoDB ',
+    description: 'MongoDB 是一个 Nosql 数据库',
+    url: 'http://www.runoob.com',
+    tags: ['mongodb', 'database', 'NoSQL'],
+    likes: 100
+},{title: 'MongoDB ',
+    description: 'MongoDB 是一个 Nosql 数据库',
+    url: 'http://www.runoob.com',
+    tags: ['mongodb', 'database', 'NoSQL'],
+    likes: 100
+}])
+
+</code></pre></div><p>插入文档你也可以使用 db.col.save(document) 命令。如果不指定 _id 字段 save() 方法类似于 insert() 方法。如果指定 _id 字段，则会更新该 _id 的数据。</p> <p>###3. <strong>更新文档</strong> <em>MongoDB 使用 update() 和 save() 方法来更新集合中的文档。接下来让我们详细来看下两个函数的应用及其区别。</em> <strong>update()方法</strong></p> <div class="language- extra-class"><pre class="language-text"><code>db.collection.update(
+    &lt;query&gt;,
+    &lt;update&gt;,
+    {
+    upsert:&lt;boolean&gt;,
+    multi:&lt;boolean&gt;,
+    writeConcern:&lt;document&gt;
+    }
+)
+</code></pre></div><ul><li>query:update的查询条件，类似于sql update查询内where后面的</li> <li>update:更新的对象和更新的操作符，sql后面的set语句</li> <li>upsert:可选 如果不存在update的记录，是否插入objNew 默认false 不插入</li> <li>multi :可选 是否更新找到的多条数据，默认false 值更新找到的第一条</li> <li>writeConcern
+示例：</li></ul> <div class="language- extra-class"><pre class="language-text"><code>修改一条记录
+db.test01.update(
+ {
+'title':'MongoDB'
+ },
+ {
+    $set:{
+        'title':'MongoDB Update'
+    }
+ }
+)
+
+修改多条记录
+db.col.update({'title':'MongoDB'},{$set:{'title':'MongoDB123'}},{multi:true})
+
+</code></pre></div><p><strong>save()方法</strong> <em>save()方法通过传入的文档来替换已有的文档</em></p> <div class="language-mongo extra-class"><pre class="language-text"><code>db.collection.save(
+     &lt;document&gt;,
+     {
+        writeConcern:&lt;document&gt;
+     }
+  )
+</code></pre></div><p>参数说明：</p> <ul><li>document : 文档数据。</li> <li>writeConcern :可选，抛出异常的级别。
+示例：</li></ul> <div class="language- extra-class"><pre class="language-text"><code>db.test01.save(
+  {
+    &quot;_id&quot; : ObjectId(&quot;56064f89ade2f21f36b03136&quot;),
+    &quot;title&quot; : &quot;MongoDB&quot;,
+    &quot;description&quot; : &quot;MongoDB 是一个 Nosql 数据库&quot;,
+    &quot;by&quot; : &quot;Runoob&quot;,
+    &quot;url&quot; : &quot;http://www.runoob.com&quot;,
+    &quot;tags&quot; : [
+            &quot;mongodb&quot;,
+            &quot;NoSQL&quot;
+    ],
+    &quot;likes&quot; : 120
+  }
+)
+
+其他示例：
+只更新第一条记录：
+db.col.update( { &quot;count&quot; : { $gt : 1 } } , { $set : { &quot;test2&quot; : &quot;OK&quot;} } );
+
+全部更新： 设置multi为true
+db.col.update( { &quot;count&quot; : { $gt : 3 } } , { $set : { &quot;test2&quot; : &quot;OK&quot;} },false,true );
+
+只添加第一条：
+db.col.update( { &quot;count&quot; : { $gt : 4 } } , { $set : { &quot;test5&quot; : &quot;OK&quot;} },true,false );
+
+全部添加进去:
+db.col.update( { &quot;count&quot; : { $gt : 5 } } , { $set : { &quot;test5&quot; : &quot;OK&quot;} },true,true );
+
+全部更新：
+db.col.update( { &quot;count&quot; : { $gt : 15 } } , { $inc : { &quot;count&quot; : 1} },false,true );
+
+只更新第一条记录：
+db.col.update( { &quot;count&quot; : { $gt : 10 } } , { $inc : { &quot;count&quot; : 1} },false,false );
+
+</code></pre></div><p><strong>使用$inc操作符将一个字段的值增加或者减少</strong></p> <h3 id="删除文档"><a href="#删除文档" class="header-anchor">#</a> <strong>删除文档</strong></h3> <p><em>MongoDB remove()函数是用来移除集合中的数据</em>
+语法如下：</p> <div class="language- extra-class"><pre class="language-text"><code>db.collection.deleteMany(
+  &lt;query&gt;,
+  {
+    writeConcern:&lt;document&gt;
+  }
+)
+
+OR
+
+db.inventory.deleteOne( { status: &quot;D&quot; } )
+
+</code></pre></div><ul><li>query : （可选） 选择删除文档的条件</li> <li>justOne: (可选) 如果设置为true,只删除一个， 默认false 删除所有</li> <li>writeConcern: (可选) 抛出异常的级别
+示例：</li></ul> <div class="language- extra-class"><pre class="language-text"><code>db.test01.deleteMany({ 'title':'MongoDB '})
+</code></pre></div><p>remove() 方法 并不会真正释放空间。
+需要继续执行 db.repairDatabase() 来回收磁盘空间。</p> <h3 id="查询文档"><a href="#查询文档" class="header-anchor">#</a> <strong>查询文档</strong></h3> <p><em>MongoDB 使用find（）方法查询</em>
+语法如下：</p> <div class="language- extra-class"><pre class="language-text"><code>
+非结构查询
+db.collection.find(query,projection);
+
+易读的方式查询
+db.collection.find().pretty();
+
+只查询一条
+db.collection.findOne();
+</code></pre></div><ul><li>query:可选 使用查询操作符指定查询条件</li> <li>projection: 可选 使用投影操作符返回指定的键，</li></ul> <p>操作符列表</p> <ul><li>等于    ： {<key>:<value>}</value></key></li> <li>小于    : {<key>:{$lt:<value>}}</value></key></li> <li>小于等于: {<key>:{$lte:<value>}}</value></key></li> <li>大于    :{<key>:{$gt:<value>}}</value></key></li> <li>大于等于:{<key>:{$gte:&lt;value}}</key></li> <li>不等于 :&lt;{<key>:{$ne:<value>}}</value></key></li></ul> <p>**AND 条件 **
+MongoDB 的 find() 方法可以传入多个键(key)，每个键(key)以逗号隔开，即常规 SQL 的 AND 条件。</p> <div class="language- extra-class"><pre class="language-text"><code>db.col.find({key1:value1, key2:value2}).pretty()
+</code></pre></div><p><strong>OR 条件</strong>
+示例：</p> <div class="language- extra-class"><pre class="language-text"><code>db.col.find(
+   {
+    $or:[
+     {key1:value1},{key2:value2db}
+    ]
+   }
+ )
+
+</code></pre></div><p>示例：</p> <div class="language- extra-class"><pre class="language-text"><code>db.test01.find( { $or:[ {'likes':{$lt:110}}, {'title':'MongoDB Update'}]})
+
+联合使用
+
+db.col.find({&quot;likes&quot;: {$gt:50}, $or: [{&quot;by&quot;: &quot;菜鸟教程&quot;},{&quot;title&quot;: &quot;MongoDB 教程&quot;}]}).pretty()
+</code></pre></div><p><strong>模糊查询</strong></p> <div class="language- extra-class"><pre class="language-text"><code>包含
+db.col.find({'title':'/教/'})
+开头
+db.col.find({'title':'/^教/'})
+结尾
+db.col.find({'title':'/教$/'})
+
+</code></pre></div><h3 id="type-操作符"><a href="#type-操作符" class="header-anchor">#</a> $type 操作符</h3> <p>$type操作符是基于BSON类型来检索集合中匹配的数据类型，并返回结果。
+MongoDB 中可以使用的类型如下表所示：
+Double  1
+String  2
+Object  3
+Array   4
+Binary data     5
+Undefined   6   已废弃。
+Object id   7
+Boolean     8
+Date    9
+Null    10
+Regular Expression  11
+JavaScript  13
+Symbol  14
+JavaScript (with scope)     15
+32-bit integer  16
+Timestamp   17
+64-bit integer  18
+Min key     255     Query with -1.
+Max key     127
+语法如下：</p> <div class="language- extra-class"><pre class="language-text"><code>db.col.find({&quot;title&quot; : {$type : 2}})
+或
+db.col.find({&quot;title&quot; : {$type : 'string'}})
+</code></pre></div><h3 id="limit-和-skip"><a href="#limit-和-skip" class="header-anchor">#</a> <strong>Limit 和 skip</strong></h3> <p>如果你需要在MongoDB中读取指定数量的数据记录，可以使用MongoDB的Limit方法，limit()方法接受
+一个数字参数，该参数指定从MongoDB中读取的记录条数</p> <div class="language- extra-class"><pre class="language-text"><code>&gt;db.COLLECTION_NAME.find().limit(NUMBER).skip(NUMBER)
+</code></pre></div><h3 id="排序"><a href="#排序" class="header-anchor">#</a> 排序</h3> <p>在 MongoDB 中使用 sort() 方法对数据进行排序，sort() 方法可以通过参数指定排序的字段，并使用 1 和 -1 来指定排序的方式，其中 1 为升序排列，而 -1 是用于降序排列。
+语法</p> <div class="language- extra-class"><pre class="language-text"><code>db.col.find().sort({key:1})
+
+配合其他查询
+执行的顺序是先 sort(), 然后是 skip()，最后是显示的 limit()。
+</code></pre></div><h3 id="索引"><a href="#索引" class="header-anchor">#</a> 索引</h3> <p>索引通常能够极大的提高查询的效率，如果没有索引，MongoDB在读取数据时必须扫描集合中的每个文件并选取那些符合查询条件的记录。
+<strong>createIndex() 方法</strong></p> <div class="language- extra-class"><pre class="language-text"><code>db.collection.createIndex(Keys,options)
+
+db.col.createIndex({&quot;title&quot;:1})
+</code></pre></div><p>语法中 Key 值为你要创建的索引字段，1 为指定按升序创建索引，如果你想按降序来创建索引指定为 -1 即可。
+createIndex() 接收可选参数，可选参数列表如下</p> <table><thead><tr><th>Parameter</th> <th>Type</th> <th>Description</th></tr></thead> <tbody><tr><td>background</td> <td>Boolean</td> <td>建索引过程会阻塞其它数据库操作，background可指定以后台方式创建索引，即增加 &quot;background&quot; 可选参数。 &quot;background&quot; 默认值为false。</td></tr> <tr><td>unique</td> <td>Boolean</td> <td>建立的索引是否唯一。指定为true创建唯一索引。默认值为false.</td></tr> <tr><td>name</td> <td>string</td> <td>索引的名称。如果未指定，MongoDB的通过连接索引的字段名和排序顺序生成一个索引名称。</td></tr> <tr><td>dropDups</td> <td>Boolean</td> <td>3.0+版本已废弃。在建立唯一索引时是否删除重复记录,指定 true 创建唯一索引。默认值为 false.</td></tr> <tr><td>sparse</td> <td>Boolean</td> <td>对文档中不存在的字段数据不启用索引；这个参数需要特别注意，如果设置为true的话，在索引字段中不会查询出不包含对应字段的文档.。默认值为 false.</td></tr> <tr><td>expireAfterSeconds</td> <td>integer</td> <td>指定一个以秒为单位的数值，完成 TTL设定，设定集合的生存时间。</td></tr> <tr><td>v</td> <td>index version</td> <td>索引的版本号。默认的索引版本取决于mongod创建索引时运行的版本。</td></tr> <tr><td>weights</td> <td>document</td> <td>索引权重值，数值在 1 到 99,999 之间，表示该索引相对于其他索引字段的得分权重。</td></tr> <tr><td>default_language</td> <td>string</td> <td>对于文本索引，该参数决定了停用词及词干和词器的规则的列表。 默认为英语</td></tr> <tr><td>language_override</td> <td>string</td> <td>对于文本索引，该参数指定了包含在文档中的字段名，语言覆盖默认的language，默认值为 language.</td></tr></tbody></table> <p>示例：</p> <div class="language- extra-class"><pre class="language-text"><code>在后台创建索引
+
+db.values.createIndex({open: 1, close: 1}, {background: true})
+
+、查看集合索引
+
+db.col.getIndexes()
+
+2、查看集合索引大小
+
+db.col.totalIndexSize()
+
+3、删除集合所有索引
+
+db.col.dropIndexes()
+
+4、删除集合指定索引
+
+db.col.dropIndex(&quot;索引名称&quot;)
+</code></pre></div><p>利用 TTL 集合对存储的数据进行失效时间设置：经过指定的时间段后或在指定的时间点过期，MongoDB 独立线程去清除数据。类似于设置定时自动删除任务，可以清除历史记录或日志等前提条件，设置 Index 的关键字段为日期类型 new Date()。
+<strong>例如数据记录中 createDate 为日期类型时：</strong></p> <ul><li>设置时间180秒后自动清除。</li> <li>设置在创建记录后，180 秒左右删除。</li></ul> <div class="language- extra-class"><pre class="language-text"><code>db.col.createIndex({&quot;createDate&quot;: 1},{expireAfterSeconds: 180})
+</code></pre></div><p><strong>由记录中设定日期点清除。</strong></p> <p>设置 A 记录在 2019 年 1 月 22 日晚上 11 点左右删除，A 记录中需添加 &quot;ClearUpDate&quot;: new Date('Jan 22, 2019 23:00:00')，且 Index中expireAfterSeconds 设值为 0。</p> <div class="language- extra-class"><pre class="language-text"><code>db.col.createIndex({&quot;ClearUpDate&quot;: 1},{expireAfterSeconds: 0})
+</code></pre></div><p><strong>其他注意事项:</strong></p> <ul><li>索引关键字段必须是 Date 类型。</li> <li>非立即执行：扫描 Document 过期数据并删除是独立线程执行，默认 60s 扫描一次，删除也不一定是立即删除成功。</li> <li>单字段索引，混合索引不支持。</li></ul> <h3 id="聚合"><a href="#聚合" class="header-anchor">#</a> 聚合</h3> <p><em>MongoDB中聚合(aggregate)主要用于处理数据(诸如统计平均值,求和等)，并返回计算后的数据结果。有点类似sql语句中的 count(</em>)。*
+语法如下：</p> <div class="language- extra-class"><pre class="language-text"><code>db.col.aggregate(AGGREGATE_OPERATION)
+
+db.mycol.aggregate(
+    [
+      {
+        $group : {
+            _id : &quot;$by_user&quot;,
+            num_tutorial : {
+                $sum : 1
+            }
+        }
+      }
+    ]
+)
+
+db.test01.aggregate([{$group:{_id:'$by_user',mum_tutorial:{$sum:1}} }])
+
+</code></pre></div><p>表达式：</p> <table><thead><tr><th>表达式</th> <th>描述</th> <th>实例</th></tr></thead> <tbody><tr><td>$sum</td> <td>计算总和。</td> <td>db.mycol.aggregate([{$group:{_id:&quot;$by_user&quot;,num_tutorial : {$sum : &quot;$likes&quot;}}}])</td></tr> <tr><td>$avg</td> <td>计算平均值</td> <td>db.mycol.aggregate([{$group : {_id : &quot;$by_user&quot;, num_tutorial : {$avg : &quot;$likes&quot;}}}])</td></tr> <tr><td>$min</td> <td>获取集合中所有文档对应值得最小值。</td> <td>db.mycol.aggregate([{$group : {_id : &quot;$by_user&quot;, num_tutorial : {$min : &quot;$likes&quot;}}}])</td></tr> <tr><td>$max</td> <td>获取集合中所有文档对应值得最大值。</td> <td>db.mycol.aggregate([{$group : {_id : &quot;$by_user&quot;, num_tutorial : {$max : &quot;$likes&quot;}}}])</td></tr> <tr><td>$push</td> <td>在结果文档中插入值到一个数组中。</td> <td>db.mycol.aggregate([{$group : {_id : &quot;$by_user&quot;, url : {$push: &quot;$url&quot;}}}])</td></tr> <tr><td>$addToSet</td> <td>在结果文档中插入值到一个数组中，但不创建副本。</td> <td>db.mycol.aggregate([{$group : {_id : &quot;$by_user&quot;, url : {$addToSet : &quot;$url&quot;}}}])</td></tr> <tr><td>$first</td> <td>根据资源文档的排序获取第一个文档数据。</td> <td>db.mycol.aggregate([{$group : {_id : &quot;$by_user&quot;, first_url : {$first : &quot;$url&quot;}}}])</td></tr> <tr><td>$last</td> <td>根据资源文档的排序获取最后一个文档数据</td> <td>db.mycol.aggregate([{$group : {_id : &quot;$by_user&quot;, last_url : {$last : &quot;$url&quot;}}}])</td></tr></tbody></table> <p><strong>管道的概念</strong>
+管道在Unix和Linux中一般用于将当前命令的输出结果作为下一个命令的参数。</p> <p>MongoDB的聚合管道将MongoDB文档在一个管道处理完毕后将结果传递给下一个管道处理。管道操作是可以重复的。</p> <p>表达式：处理输入文档并输出。表达式是无状态的，只能用于计算当前聚合管道的文档，不能处理其它的文档。</p> <p>这里我们介绍一下聚合框架中常用的几个操作：</p> <ul><li><p>$project：修改输入文档的结构。可以用来重命名、增加或删除域，也可以用于创建计算结果以及嵌套文档。</p></li> <li><p>$match：用于过滤数据，只输出符合条件的文档。$match使用MongoDB的标准查询操作。</p></li> <li><p>$limit：用来限制MongoDB聚合管道返回的文档数。</p></li> <li><p>$skip：在聚合管道中跳过指定数量的文档，并返回余下的文档。</p></li> <li><p>$unwind：将文档中的某一个数组类型字段拆分成多条，每条包含数组中的一个值。</p></li> <li><p>$group：将集合中的文档分组，可用于统计结果。</p></li> <li><p>$sort：将输入文档排序后输出。</p></li> <li><p>$geoNear：输出接近某一地理位置的有序文档。
+示例</p></li> <li><p>$project 示例</p></li></ul> <div class="language- extra-class"><pre class="language-text"><code>db.col.aggregate(
+    { $project : {
+        title : 1 ,
+        author : 1 ,
+    }}
+ );
+</code></pre></div><p>这样的话结果中就只还有_id,tilte和author三个字段了，默认情况下_id字段是被包含的，如果要想不包含_id话可以这样 设为0</p> <ul><li>$match实例</li></ul> <div class="language- extra-class"><pre class="language-text"><code>db.articles.aggregate( [
+                        { $match : { score : { $gt : 70, $lte : 90 } } },
+                        { $group: { _id: null, count: { $sum: 1 } } }
+] );
+</code></pre></div><ul><li>$skip实例</li></ul> <div class="language- extra-class"><pre class="language-text"><code>db.article.aggregate(
+     { $skip : 5 }
+    );
+</code></pre></div></div></div> <!----> <div class="page-edit"><!----> <!----> <!----></div> <div class="page-nav-wapper"><div class="page-nav-centre-wrap"><a href="/pages/701ae0/" class="page-nav-centre page-nav-centre-prev"><div class="tooltip">MyBatis-Plus-笔记</div></a> <a href="/pages/093109/" class="page-nav-centre page-nav-centre-next"><div class="tooltip">elasticsearch笔记</div></a></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/pages/701ae0/" class="prev">MyBatis-Plus-笔记</a></span> <span class="next"><a href="/pages/093109/">elasticsearch笔记</a>→
+      </span></p></div></div></div> <div class="article-list"><div class="article-title"><a href="/archives/" class="iconfont icon-bi">最近更新</a></div> <div class="article-wrapper"><dl><dd>01</dd> <dt><a href="/pages/4e0768/"><div>
+            Swagger接入YApi
+            <!----></div></a> <span class="date">06-08</span></dt></dl><dl><dd>02</dd> <dt><a href="/pages/ceaa10/"><div>
+            Docker_学习笔记2
+            <!----></div></a> <span class="date">05-31</span></dt></dl><dl><dd>03</dd> <dt><a href="/pages/7bf273/"><div>
+            压缩网络图片并下载
+            <!----></div></a> <span class="date">05-31</span></dt></dl> <dl><dd></dd> <dt><a href="/archives/" class="more">更多文章&gt;</a></dt></dl></div></div></main></div> <div class="footer"><!----> 
+  Theme by
+  <a href="https://github.com/xugaoyi/vuepress-theme-vdoing" target="_blank" title="本站主题">Vdoing</a> <!----></div> <div class="buttons"><div title="返回顶部" class="button blur go-to-top iconfont icon-fanhuidingbu" style="display:none;"></div> <div title="去评论" class="button blur go-to-comment iconfont icon-pinglun" style="display:none;"></div> <div title="主题模式" class="button blur theme-mode-but iconfont icon-zhuti"><ul class="select-box" style="display:none;"><li class="iconfont icon-zidong">
+          跟随系统
+        </li><li class="iconfont icon-rijianmoshi">
+          浅色模式
+        </li><li class="iconfont icon-yejianmoshi">
+          深色模式
+        </li><li class="iconfont icon-yuedu">
+          阅读模式
+        </li></ul></div></div> <!----> <!----> <!----></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.98d20b3f.js" defer></script><script src="/assets/js/2.869fa79d.js" defer></script><script src="/assets/js/13.82b8da78.js" defer></script>
+  </body>
+</html>

@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>docker学习笔记</title>
+    <meta name="generator" content="VuePress 1.9.7">
+    
+    <meta name="description" content="这都能别你看到！">
+    
+    <link rel="preload" href="/assets/css/0.styles.207586fd.css" as="style"><link rel="preload" href="/assets/js/app.98d20b3f.js" as="script"><link rel="preload" href="/assets/js/2.869fa79d.js" as="script"><link rel="preload" href="/assets/js/24.19c41544.js" as="script"><link rel="prefetch" href="/assets/js/10.28e4170c.js"><link rel="prefetch" href="/assets/js/11.817e0619.js"><link rel="prefetch" href="/assets/js/12.a82aae2a.js"><link rel="prefetch" href="/assets/js/13.82b8da78.js"><link rel="prefetch" href="/assets/js/14.f8f102e1.js"><link rel="prefetch" href="/assets/js/15.e8bf6d93.js"><link rel="prefetch" href="/assets/js/16.9bb3afab.js"><link rel="prefetch" href="/assets/js/17.59f3103a.js"><link rel="prefetch" href="/assets/js/18.06441a97.js"><link rel="prefetch" href="/assets/js/19.31ae385d.js"><link rel="prefetch" href="/assets/js/20.9011a7e6.js"><link rel="prefetch" href="/assets/js/21.bd89a370.js"><link rel="prefetch" href="/assets/js/22.87ac478c.js"><link rel="prefetch" href="/assets/js/23.3c64c06b.js"><link rel="prefetch" href="/assets/js/25.4322d2aa.js"><link rel="prefetch" href="/assets/js/26.cfccd3d6.js"><link rel="prefetch" href="/assets/js/27.dbda8246.js"><link rel="prefetch" href="/assets/js/28.79ed3dfa.js"><link rel="prefetch" href="/assets/js/29.bb263129.js"><link rel="prefetch" href="/assets/js/3.5283630f.js"><link rel="prefetch" href="/assets/js/30.fbb6834a.js"><link rel="prefetch" href="/assets/js/31.40b35657.js"><link rel="prefetch" href="/assets/js/32.ca16d268.js"><link rel="prefetch" href="/assets/js/33.f7946037.js"><link rel="prefetch" href="/assets/js/34.fdf25b59.js"><link rel="prefetch" href="/assets/js/35.e59df783.js"><link rel="prefetch" href="/assets/js/36.f719d947.js"><link rel="prefetch" href="/assets/js/37.f7ffce81.js"><link rel="prefetch" href="/assets/js/38.1bcbbfbc.js"><link rel="prefetch" href="/assets/js/39.6058876d.js"><link rel="prefetch" href="/assets/js/4.178067f8.js"><link rel="prefetch" href="/assets/js/5.e770adf9.js"><link rel="prefetch" href="/assets/js/6.b48b33bd.js"><link rel="prefetch" href="/assets/js/7.7022f113.js"><link rel="prefetch" href="/assets/js/8.11a349d9.js"><link rel="prefetch" href="/assets/js/9.8c22faf0.js">
+    <link rel="stylesheet" href="/assets/css/0.styles.207586fd.css">
+  </head>
+  <body class="theme-mode-light">
+    <div id="app" data-server-rendered="true"><div class="theme-container sidebar-open"><header class="navbar blur"><div title="目录" class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/" class="home-link router-link-active"><img src="/images/logo.png" alt="" class="logo"> <!----></a> <div class="links"><div class="search-box"><input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="碎碎念" class="dropdown-title"><a href="/coding/" class="link-title">碎碎念</a> <span class="title" style="display:none;">碎碎念</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/baodian/zero/" class="nav-link">PAT</a></li><li class="dropdown-item"><!----> <a href="/baodian/zero/" class="nav-link">剑指offer</a></li><li class="dropdown-item"><!----> <a href="/baodian/high/" class="nav-link">LeeCode</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="爱编程" class="dropdown-title"><a href="/coding/" class="link-title">爱编程</a> <span class="title" style="display:none;">爱编程</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/coding/pat/" class="nav-link">PAT</a></li><li class="dropdown-item"><!----> <a href="/coding/offer/" class="nav-link">剑指offer</a></li><li class="dropdown-item"><!----> <a href="/coding/leeCode/" class="nav-link">LeeCode</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="专栏" class="dropdown-title"><a href="/column/" class="link-title">专栏</a> <span class="title" style="display:none;">专栏</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/column/synology/" class="nav-link">群晖NAS Docker系列教程</a></li><li class="dropdown-item"><!----> <a href="/column/vuepress/" class="nav-link">vuepress系列教程</a></li><li class="dropdown-item"><!----> <a href="/column/springboot/" class="nav-link">springboot系列教程</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端" class="dropdown-title"><!----> <span class="title" style="display:;">后端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>Mysql</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="http://mysql.hepcloud.top" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  DS918-Mysql
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="http://mysql.huerpu.top" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  DS220-MySql
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>Redis</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="http://redis.hepcloud.top" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  DS918-Redis
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="http://redis.huerpu.top" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  DS220-Redis
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>ElasticSearch</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="http://es.hepcloud.top" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  DS918-es
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="http://es.hepcloud.top" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  DS220-es
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li></ul></div></div><div class="nav-item"><a href="http://www.jinglisen.top" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  关于我
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav></div></header> <div class="sidebar-mask"></div> <div class="sidebar-hover-trigger"></div> <aside class="sidebar" style="display:none;"><!----> <nav class="nav-links"><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="碎碎念" class="dropdown-title"><a href="/coding/" class="link-title">碎碎念</a> <span class="title" style="display:none;">碎碎念</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/baodian/zero/" class="nav-link">PAT</a></li><li class="dropdown-item"><!----> <a href="/baodian/zero/" class="nav-link">剑指offer</a></li><li class="dropdown-item"><!----> <a href="/baodian/high/" class="nav-link">LeeCode</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="爱编程" class="dropdown-title"><a href="/coding/" class="link-title">爱编程</a> <span class="title" style="display:none;">爱编程</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/coding/pat/" class="nav-link">PAT</a></li><li class="dropdown-item"><!----> <a href="/coding/offer/" class="nav-link">剑指offer</a></li><li class="dropdown-item"><!----> <a href="/coding/leeCode/" class="nav-link">LeeCode</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="专栏" class="dropdown-title"><a href="/column/" class="link-title">专栏</a> <span class="title" style="display:none;">专栏</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="/column/synology/" class="nav-link">群晖NAS Docker系列教程</a></li><li class="dropdown-item"><!----> <a href="/column/vuepress/" class="nav-link">vuepress系列教程</a></li><li class="dropdown-item"><!----> <a href="/column/springboot/" class="nav-link">springboot系列教程</a></li></ul></div></div><div class="nav-item"><div class="dropdown-wrapper"><button type="button" aria-label="后端" class="dropdown-title"><!----> <span class="title" style="display:;">后端</span> <span class="arrow right"></span></button> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><h4>Mysql</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="http://mysql.hepcloud.top" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  DS918-Mysql
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="http://mysql.huerpu.top" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  DS220-MySql
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>Redis</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="http://redis.hepcloud.top" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  DS918-Redis
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="http://redis.huerpu.top" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  DS220-Redis
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li><li class="dropdown-item"><h4>ElasticSearch</h4> <ul class="dropdown-subitem-wrapper"><li class="dropdown-subitem"><a href="http://es.hepcloud.top" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  DS918-es
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-subitem"><a href="http://es.hepcloud.top" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  DS220-es
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></li></ul></div></div><div class="nav-item"><a href="http://www.jinglisen.top" target="_blank" rel="noopener noreferrer" class="nav-link external">
+  关于我
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></div> <!----></nav>  <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><a href="/linux/K8s部署文档" class="sidebar-heading clickable open"><span>Linux</span> <span class="arrow down"></span></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/pages/85e15a/" class="sidebar-link">nginx入门到亿级流量</a></li><li><a href="/pages/0cfa5b/" class="sidebar-link">K8s部署文档</a></li><li><a href="/pages/d65d5d/" aria-current="page" class="active sidebar-link">docker学习笔记</a></li><li><a href="/pages/ceaa10/" class="sidebar-link">docker学习笔记2</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/database/MyBatis-Plus-笔记" class="sidebar-heading clickable"><span>数据库</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/设计模式/学习笔记" class="sidebar-heading clickable"><span>设计模式</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/调试工具/arthas/Arthas（阿尔萨斯）Java诊断工具_浅入了解" class="sidebar-heading clickable"><span>调试</span> <span class="arrow right"></span></a> <!----></section></li></ul> </aside> <div><main class="page"><div class="theme-vdoing-wrapper "><div class="articleInfo-wrap" data-v-06225672><div class="articleInfo" data-v-06225672><ul class="breadcrumbs" data-v-06225672><li data-v-06225672><a href="/" title="首页" class="iconfont icon-home router-link-active" data-v-06225672></a></li> <li data-v-06225672><a href="/categories/?category=linux" title="分类" data-v-06225672>linux</a></li></ul> <div class="info" data-v-06225672><!----> <div title="创建时间" class="date iconfont icon-riqi" data-v-06225672><a href="javascript:;" data-v-06225672>2022-05-31</a></div> <!----></div></div></div> <!----> <div class="content-wrapper"><!----> <h1><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAB4AAAAeCAYAAAA7MK6iAAAAAXNSR0IArs4c6QAABGpJREFUSA3tVVtoXFUU3fvOI53UlmCaKIFmwEhsE7QK0ipFEdHEKpXaZGrp15SINsXUWvBDpBgQRKi0+KKoFeJHfZA+ED9KKoIU2gYD9UejTW4rVIzm0VSTziPzuNu1z507dibTTjL4U/DAzLn3nL3X2o91ziX6f9wMFdh6Jvbm9nNSV0msViVO6tN1Rm7NMu2OpeJ9lWBUTDxrJbYTS0hInuwciu9eLHlFxCLCZEk3MegsJmZ5K/JD6t7FkFdEvGUo1g7qJoG3MHImqRIn8/nzY1K9UPKKiJmtnUqHVE3Gbuay6vJE/N2FEmuxFjW2nUuE0yQXRRxLiTUAzs36zhZvOXJPdX850EVnnLZkB8prodQoM5JGj7Xk2mvC7JB8tG04Ef5PiXtG0UtxupRQSfTnBoCy554x18yJHI6I+G5Eru4LHmPJZEQsrvPUbMiA8G/WgMK7w7I+ez7++o2ANfbrjvaOl1tFMs+htG3IrZH9/hDX1Pr8Tc0UvH8tcX29KzAgIGcEkINyW5BF9x891hw6VYqgJHEk0huccS7vh3C6gTiODL+26huuBtbct8eZnqLML8PkxGYpuPZBqtqwkSjgc4mB5gbgig5i+y0UDK35LMxXisn9xQtK+nd26gTIHsHe/oblK/b29fUmN/8Y+9jAQrnBp56m1LcDlDp9irKTExSKduXJVWSqdBMA08pEJnEIOB3FPPMybu/oeV8zFeYN3xx576Q6RH+VmplE4ncQV5v+5rzSoyOU7PuEAg8g803PwBJ0CExno/jcMbN8tONYeOmHiuUNryvm3fRUy4tMPVLdAGkUhNWuggGrJcXPv+ouCjz0MKUHz1J2/E8IC9nqTabcxgaBYM0hPhD5Y65FsbxRQKxCQrDjDctW7PUM3HuZunFyifSAqEfuzCp48Il24luWUWZoyJCaPR82jE0+kFA643wRFVni4RYSq3ohJO2pZ7B5dO4xkDWbEpossJPLSrPjYID8rS2UHTlvyNxqIGsg674XJJ7vnh5L7PNwC4hh2sjCI96mzszOTpxLF0T7l88Yz7lAuK6OnL8gXLOnTvpzSb22YG8W7us3jSebFHeeqnXRG1vt+MoUM84LQIBmMsCTAcOauTh0T0l0neQK7m2bLMt2mGxU3HYssS0J2cdv5wljlPsrIuZLAG/2DOZIXgCYT8uMGZN+e2kSirfxZOPCsC0f24nTZzspnVn9VePS1Z5vubmAGGXG8ZFno9Hel0yfA5ZPhF7Dh972BQJ2qCpgH67lmWtBYbvk6sz02wjky2vXyz0XErP/kFB619js1BtwfOV4OPRqOQBjy3Qbk18vigUPPSD5ceHnwck7W9bhAqZdd7SuG7w4/P2F/GaJh8c7e9qgow+Q7cGBo+98WsLkuktFqiZabtXuQTu/Y5ETbR0v7tNSFnvrmu6pjdoan2KjMu8q/Hmj1EfCO2ZGfEIbIXKUlw8qaX9/b2oeSJmFksSeT/Fn0V3nSypChh4Gjh74ybO9aeZ/AN2dwciu2/MhAAAAAElFTkSuQmCC">docker学习笔记<!----></h1> <!----> <div class="theme-vdoing-content content__default"><p>#docker 学习笔记
+##1. 安装
+###linux 安装</p> <ul><li>添加yum</li></ul> <div class="language- extra-class"><pre class="language-text"><code>yum install epel-release –y
+yum clean all
+yum list
+</code></pre></div><ul><li>安装并运行Docker</li></ul> <div class="language- extra-class"><pre class="language-text"><code>yum install docker-io –y
+systemctl start docker
+</code></pre></div><ul><li>检查安装结果</li></ul> <div class="language- extra-class"><pre class="language-text"><code>docker info
+</code></pre></div><p>###<strong>使用Docker</strong>
+1.管理Docker守护进程。</p> <div class="language- extra-class"><pre class="language-text"><code>systemctl start docker     #运行Docker守护进程
+systemctl stop docker      #停止Docker守护进程
+systemctl restart docker   #重启Docker守护进程
+</code></pre></div><p>2.管理镜像。本文使用的是来自阿里云仓库的Apache镜像。</p> <div class="language- extra-class"><pre class="language-text"><code>docker pull registry.cn-hangzhou.aliyuncs.com/lxepoo/apache-php5
+</code></pre></div><ul><li>修改标签。由于阿里云仓库镜像的镜像名称很长，可以修改镜像标签以便记忆区分。</li></ul> <div class="language- extra-class"><pre class="language-text"><code>docker tag registry.cn-hangzhou.aliyuncs.com/lxepoo/apache-php5:latest aliweb:v1
+</code></pre></div><ul><li>查看已有镜像。</li></ul> <div class="language- extra-class"><pre class="language-text"><code>    docker images
+</code></pre></div><ul><li>强制删除镜像。</li></ul> <div class="language- extra-class"><pre class="language-text"><code>    docker rmi –f registry.cn-hangzhou.aliyuncs.com/lxepoo/apache-php5
+</code></pre></div><p>3.管理容器。</p> <ul><li>进入容器。e1xxxxxxxxxe是执行docker images命令查询到的ImageId，使用docker run命令启动容器。</li></ul> <div class="language- extra-class"><pre class="language-text"><code>    docker run –it e1xxxxxxxxxe /bin/bash
+</code></pre></div><div class="language- extra-class"><pre class="language-text"><code>    docker run -d --name apache e1xxxxxxxxxe
+</code></pre></div><ul><li>进入后台运行的容器。</li></ul> <div class="language- extra-class"><pre class="language-text"><code>    docker exec -it apache /bin/bash
+</code></pre></div><ul><li>将容器做成镜像，命令的参数说明：docker commit &lt;容器ID或容器名&gt; [&lt;仓库名&gt;[:&lt;标签&gt;]]。</li></ul> <div class="language- extra-class"><pre class="language-text"><code>    docker commit containerID/containerName repository:tag
+</code></pre></div><ul><li>为了方便测试和恢复，将源镜像运行起来后，再做一个命名简单的镜像做测试。</li></ul> <div class="language- extra-class"><pre class="language-text"><code>    docker commit 4c8066cd8c01 apachephp:v1
+</code></pre></div><ul><li>运行容器并将宿主机的8080端口映射到容器里去。</li></ul> <div class="language- extra-class"><pre class="language-text"><code>    docker run -d -p 8080:80 apachephp:v1
+    在浏览器输入宿主机IP加8080端口访问测试!
+</code></pre></div><p>##概念##</p> <ul><li>Docker 镜像 images
+容器运行时的只读模板，操作系统+软件运行环境+用户程序
+可比喻为Java程序中的Class</li> <li>Docker 容器 containers
+容器包含某个应用程序运行所需要的全部环境
+科比与为Java程序中通过class New出来的对象</li> <li>Dcoker 仓库 registeries
+用来保存镜像，有共有和私有仓库。
+类似maven中的仓库。</li></ul> <p>##Docker容器常见命令
+<em>简介：列出Docker在linux下的常用命令安装完Docker之后的命令都是Docker开头，可使用 <kbd>docker --help</kbd>查看所有指令</em></p> <ol><li><strong>搜索镜像：</strong></li></ol> <div class="language- extra-class"><pre class="language-text"><code>docker search imageName
+</code></pre></div><ul><li>搜索RabbitMQ   docker search rabbitmq:management</li></ul> <ol start="2"><li><strong>拉取镜像:</strong></li></ol> <div class="language- extra-class"><pre class="language-text"><code>docker pull REPOSITORY:TAG
+</code></pre></div><ul><li>REPOSITORY : 镜像名称</li> <li>TAG: 镜像的标签</li> <li>示例：docker pull rabbitmq:management</li></ul> <ol start="3"><li><strong>列出当前系统存在的镜像</strong></li></ol> <div class="language- extra-class"><pre class="language-text"><code>docker images
+</code></pre></div><ol start="4"><li><strong>运行一个容器</strong></li></ol> <div class="language- extra-class"><pre class="language-text"><code>docker run -d -p 5672:5672 -p 15672:15672 rabbitmq:management
+</code></pre></div><ul><li>docker run : 运行一个容器</li> <li>-d         : 后台运行</li> <li>-p         :端口映射 可映射多个端口</li> <li>rabbitqm:meangement : (格式 REPOSITORY：TAG),如果不指定tag，默认使用最新的</li> <li>--name     : 设置别名 后可通过这个别名操作</li> <li>-i:交互式操作</li> <li>-t:终端</li> <li>-v:挂在数据目录</li> <li>退出容器。使用exit命令退出当前容器。</li> <li>--link 连接</li></ul> <ol start="5"><li><strong>查看在运行的容器</strong></li></ol> <div class="language- extra-class"><pre class="language-text"><code>docker ps
+</code></pre></div><p>5.1 <strong>查看正在运行的容器</strong></p> <ul><li>docker attach  退出会停止容器 不推荐</li> <li>docker exec：推荐大家使用 docker exec 命令，因为此退出容器终端，不会导致容器的停止。</li></ul> <ol start="6"><li><strong>检查容器内部信息</strong></li></ol> <div class="language- extra-class"><pre class="language-text"><code>docker inspect 容器名称
+</code></pre></div><ol start="7"><li><strong>容器 指令</strong></li></ol> <div class="language- extra-class"><pre class="language-text"><code>停止： docker stop 容器名称
+启动： docker start 容器名称
+移除： docker rm    容器名称
+</code></pre></div><ol start="8"><li><strong>删除某个镜像</strong></li></ol> <div class="language- extra-class"><pre class="language-text"><code>docker rmi IMAGE_NAME
+</code></pre></div><ul><li>强制移除镜像不管是否有容器是否在运行 增加 -f</li></ul> <p>##spring boot 和Docker整合部署</p> <p>简介:使用Docker的maven插件，构建springboot应用
+官方文档：<a href="https://spring.io/guides/gs/spring-boot-docker" target="_blank" rel="noopener noreferrer">https://spring.io/guides/gs/spring-boot-docker<span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></p> <ol><li>**步骤：maven里面添加配置pom.xml **</li></ol> <div class="language- extra-class"><pre class="language-text"><code>        &lt;properties&gt;
+           &lt;docker.image.prefix&gt;镜像前缀&lt;/docker.image.prefix&gt;
+        &lt;/properties&gt;
+
+        &lt;build&gt;
+            &lt;finalName&gt;产出物名称&lt;/finalName&gt;
+            &lt;plugins&gt;
+                &lt;plugin&gt;
+                    &lt;groupId&gt;com.spotify&lt;/groupId&gt;
+                    &lt;artifactId&gt;dockerfile-maven-plugin&lt;/artifactId&gt;
+                    &lt;version&gt;1.3.6&lt;/version&gt;
+                    &lt;configuration&gt;
+                        &lt;repository&gt;${docker.image.prefix}/${project.artifactId}&lt;/repository&gt;
+                        &lt;buildArgs&gt;
+                            &lt;JAR_FILE&gt;target/${project.build.finalName}.jar&lt;/JAR_FILE&gt;
+                        &lt;/buildArgs&gt;
+                    &lt;/configuration&gt;
+                &lt;/plugin&gt;
+            &lt;/plugins&gt;
+        &lt;/build&gt;
+</code></pre></div><ul><li>Spotify 的 docker-maven-plugin 插件是用maven插件方式构建docker镜像的。</li> <li>${project.build.finalName} 产出物名称。</li></ul> <ol start="2"><li><strong>创建Dockerfile,默认是根目录</strong>，（可以修改为src/main/docker/Dockerfile,如果修则需要制定路径）
+什么是Dockerfile : 由一系列命令和参数构成的脚本，这些命令应用于基础镜像, 最终创建一个新的镜像</li></ol> <div class="language- extra-class"><pre class="language-text"><code>FROM openjdk:8-jdk-alpine
+VOLUME /tmp
+ARG JAR_FILE
+COPY ${JAR_FILE} app.jar
+ENTRYPOINT [&quot;java&quot;,&quot;-jar&quot;,&quot;/app.jar&quot;]
+</code></pre></div><p>参数说明：</p> <ul><li>FROM 需要一个基础镜像，可以是公共的或者是私有的， 后续构建会基于此镜像，如果同一个Dockerfile中建立多个镜像时，可以使用多个FROM指令，这里程序运行需要jdk 所以需要配置jdk8 自动从仓库获取</li> <li>VOLUME  配置一个具有持久化功能的目录，主机 /var/lib/docker 目录下创建了一个临时文件，并链接到容器的/tmp。改步骤是可选的，如果涉及到文件系统的应用就很有必要了。/tmp目录用来持久化到 Docker 数据文件夹，因为 Spring Boot 使用的内嵌 Tomcat 容器默认使用/tmp作为工作目录</li> <li>ARG  设置编译镜像时加入的参数， ENV 是设置容器的环境变量</li> <li>COPY : 只支持将本地文件复制到容器 ,还有个ADD更强大但复杂点</li> <li>ENTRYPOINT 容器启动时执行的命令</li> <li>EXPOSE 8080 暴露镜像端口</li></ul> <ol start="3"><li><strong>构建镜像</strong>
+在终端运行命令</li></ol> <div class="language- extra-class"><pre class="language-text"><code>mvn install dockerfile:build
+</code></pre></div><p>##操作私人仓库</p> <ol><li>登录阿里云Docker Registry</li></ol> <div class="language- extra-class"><pre class="language-text"><code>$ sudo docker login --username=tb2265570_2012 registry.cn-hangzhou.aliyuncs.com
+</code></pre></div><p>用于登录的用户名为阿里云账号全名，密码为开通服务时设置的密码。</p> <p>您可以在访问凭证页面修改凭证密码。
+2. 从Registry中拉取镜像</p> <div class="language- extra-class"><pre class="language-text"><code>$ sudo docker pull registry.cn-hangzhou.aliyuncs.com/mrtao/mrtao:[镜像版本号]
+</code></pre></div><ol start="3"><li>将镜像推送到Registry</li></ol> <div class="language- extra-class"><pre class="language-text"><code>$ sudo docker login --username=tb2265570_2012 registry.cn-hangzhou.aliyuncs.com
+$ sudo docker tag [ImageId] registry.cn-hangzhou.aliyuncs.com/mrtao/mrtao:[镜像版本号]
+$ sudo docker push registry.cn-hangzhou.aliyuncs.com/mrtao/mrtao:[镜像版本号]
+</code></pre></div><ol start="5"><li>查看日志</li></ol> <div class="language- extra-class"><pre class="language-text"><code>docker logs -f  containerid
+</code></pre></div><p>##安装 jhipster-registry</p> <p>1.**创建 jhipster-registry.yml 文件 **</p> <div class="language- extra-class"><pre class="language-text"><code>version: '2'
+services:
+    jhipster-registry:
+        image: jhipster/jhipster-registry:v4.1.1
+        volumes:
+            - ./central-server-config:/central-config
+        # When run with the &quot;dev&quot; Spring profile, the JHipster Registry will
+        # read the config from the local filesystem (central-server-config directory)
+        # When run with the &quot;prod&quot; Spring profile, it will read the configuration from a Git repository
+        # See https://www.jhipster.tech/microservices-architecture/#registry_app_configuration
+        environment:
+            - _JAVA_OPTIONS=-Xmx512m -Xms256m
+            - SPRING_PROFILES_ACTIVE=dev,swagger
+            - SPRING_SECURITY_USER_PASSWORD=brc1234
+            - JHIPSTER_REGISTRY_PASSWORD=admin
+            - SPRING_CLOUD_CONFIG_SERVER_COMPOSITE_0_TYPE=native
+            - SPRING_CLOUD_CONFIG_SERVER_COMPOSITE_0_SEARCH_LOCATIONS=file:./central-config/localhost-config/
+            # - SPRING_CLOUD_CONFIG_SERVER_COMPOSITE_0_TYPE=git
+            # - SPRING_CLOUD_CONFIG_SERVER_COMPOSITE_0_URI=https://github.com/jhipster/jhipster-registry/
+            # - SPRING_CLOUD_CONFIG_SERVER_COMPOSITE_0_SEARCH_PATHS=central-config
+        ports:
+            - 8761:8761
+
+</code></pre></div><ul><li>在当前目录执行 docker-compose -f jhipster-registry.yml up -d</li></ul> <p>##docker--redis</p> <p>1.<strong>拉取redis镜像</strong></p> <div class="language- extra-class"><pre class="language-text"><code>liutaodeMacBook-Pro:redis mrtao$ docker pull redis
+WARNING: Error loading config file: /Users/mrtao/.docker/config.json: EOF
+Using default tag: latest
+latest: Pulling from library/redis
+68ced04f60ab: Pull complete
+7ecc253967df: Pull complete
+765957bf98d4: Pull complete
+91fff01e8fef: Pull complete
+76feb725b7e3: Pull complete
+75797de34ea7: Pull complete
+Digest: sha256:ddf831632db1a51716aa9c2e9b6a52f5035fc6fa98a8a6708f6e83033a49508d
+Status: Downloaded newer image for redis:latest
+docker.io/library/redis:latest
+</code></pre></div><ul><li>不加版本号默认最新版本，可以使用docker search redis 搜索然后下载指定的版本</li></ul> <p>2.<strong>查看本地镜像</strong></p> <div class="language- extra-class"><pre class="language-text"><code>liutaodeMacBook-Pro:redis mrtao$ docker images
+WARNING: Error loading config file: /Users/mrtao/.docker/config.json: EOF
+REPOSITORY                   TAG                 IMAGE ID            CREATED             SIZE
+redis                        latest              f0453552d7f2        4 days ago          98.2MB
+</code></pre></div><p>3.<strong>从官网获取 redis.conf 配置文件</strong></p> <blockquote><p>修改默认配置文件</p> <ul><li>bind 127.0.0.1 #注释掉这部分，这是限制redis只能本地访问
+protected-mode no #默认yes，开启保护模式，限制为本地访问</li> <li>daemonize no#默认no，改为yes意为以守护进程方式启动，可后台运行，除非kill进程（可选），改为yes会使配置文件方式启动redis失败</li> <li>dir  ./ #输入本地redis数据库存放文件夹（可选）</li> <li>appendonly yes #redis持久化（可选）</li></ul></blockquote> <p>4.<strong>docker 启动 redis 命令</strong></p> <div class="language- extra-class"><pre class="language-text"><code>docker run -p 6379:6379 --name redis -v /docker/redis/redis.conf:/etc/redis.conf -v /docker/redis/data:/data -d redis redis-server /etc/redis.conf --appendonly yes
+</code></pre></div><p><strong>命令解释说明：</strong></p> <ul><li>-p 6379:6379 端口映射：前表示主机部分，：后表示容器部分。</li> <li>--name myredis  指定该容器名称，查看和进行操作都比较方便。</li> <li>-v 挂载目录，规则与端口映射相同。</li> <li>-d redis 表示后台启动redis</li> <li>redis-server /etc/redis.conf  以配置文件启动redis，加载容器内的conf文件，最终找到的是挂载的目录/docker/redis/redis.conf</li> <li>appendonly yes 开启redis 持久化</li></ul> <p>5.<strong>使用docker ps 查看redis已经运行了</strong></p> <p>6.<strong>使用 docker exec -it redis /bin/bash进入redis</strong></p> <p>7.<strong>使用 redis-cli 可以测试连接</strong></p></div></div> <!----> <div class="page-edit"><!----> <!----> <!----></div> <div class="page-nav-wapper"><div class="page-nav-centre-wrap"><a href="/pages/0cfa5b/" class="page-nav-centre page-nav-centre-prev"><div class="tooltip">K8s部署文档</div></a> <a href="/pages/ceaa10/" class="page-nav-centre page-nav-centre-next"><div class="tooltip">docker学习笔记2</div></a></div> <div class="page-nav"><p class="inner"><span class="prev">
+        ←
+        <a href="/pages/0cfa5b/" class="prev">K8s部署文档</a></span> <span class="next"><a href="/pages/ceaa10/">docker学习笔记2</a>→
+      </span></p></div></div></div> <div class="article-list"><div class="article-title"><a href="/archives/" class="iconfont icon-bi">最近更新</a></div> <div class="article-wrapper"><dl><dd>01</dd> <dt><a href="/pages/4e0768/"><div>
+            Swagger接入YApi
+            <!----></div></a> <span class="date">06-08</span></dt></dl><dl><dd>02</dd> <dt><a href="/pages/ceaa10/"><div>
+            Docker_学习笔记2
+            <!----></div></a> <span class="date">05-31</span></dt></dl><dl><dd>03</dd> <dt><a href="/pages/7bf273/"><div>
+            压缩网络图片并下载
+            <!----></div></a> <span class="date">05-31</span></dt></dl> <dl><dd></dd> <dt><a href="/archives/" class="more">更多文章&gt;</a></dt></dl></div></div></main></div> <div class="footer"><!----> 
+  Theme by
+  <a href="https://github.com/xugaoyi/vuepress-theme-vdoing" target="_blank" title="本站主题">Vdoing</a> <!----></div> <div class="buttons"><div title="返回顶部" class="button blur go-to-top iconfont icon-fanhuidingbu" style="display:none;"></div> <div title="去评论" class="button blur go-to-comment iconfont icon-pinglun" style="display:none;"></div> <div title="主题模式" class="button blur theme-mode-but iconfont icon-zhuti"><ul class="select-box" style="display:none;"><li class="iconfont icon-zidong">
+          跟随系统
+        </li><li class="iconfont icon-rijianmoshi">
+          浅色模式
+        </li><li class="iconfont icon-yejianmoshi">
+          深色模式
+        </li><li class="iconfont icon-yuedu">
+          阅读模式
+        </li></ul></div></div> <!----> <!----> <!----></div><div class="global-ui"></div></div>
+    <script src="/assets/js/app.98d20b3f.js" defer></script><script src="/assets/js/2.869fa79d.js" defer></script><script src="/assets/js/24.19c41544.js" defer></script>
+  </body>
+</html>
